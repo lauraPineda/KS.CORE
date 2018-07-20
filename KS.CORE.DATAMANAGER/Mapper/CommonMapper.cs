@@ -1,4 +1,5 @@
-﻿using KS.CORE.ENTITIES;
+﻿using KS.CORE.DATA;
+using KS.CORE.ENTITIES;
 using KS.CORE.SHARED;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -12,7 +13,7 @@ namespace KS.CORE.DATAMANAGER
         /// </summary>
         /// <param name="DbDataReader">Data reader</param>
         /// <returns>ResponseDTO<int></returns>
-        public static ResponseDTO<int> MapperId(DbDataReader DbDataReader)
+        public static ResponseDTO<int> MapperIdInt(DbDataReader DbDataReader)
         {
             ResponseDTO<int> response = new ResponseDTO<int>();
             response.Success = true;
@@ -20,12 +21,36 @@ namespace KS.CORE.DATAMANAGER
             if (DbDataReader.HasRows)
             {
                 while (DbDataReader.Read())
-                    response.Result = Helper.GetInt32(DbDataReader, "Id");
+                    response.Result = Helper.GetInt32(DbDataReader, "iResult");
             }
             else
             {
                 response.Success = false;
-                response.Message = "Ocurrió un error al obtener el Id.";
+                response.Message = "Ocurrió un error al obtener el resultado.";
+            };
+
+            return response;
+        }
+
+        /// <summary>
+        /// Realiza mapeo del Id obtenido de un data reader
+        /// </summary>
+        /// <param name="DbDataReader">Data reader</param>
+        /// <returns>ResponseDTO<int></returns>
+        public static ResponseDTO<string> MapperIdString(DbDataReader DbDataReader)
+        {
+            ResponseDTO<string> response = new ResponseDTO<string>();
+            response.Success = true;
+
+            if (DbDataReader.HasRows)
+            {
+                while (DbDataReader.Read())
+                    response.Result = Helper.GetString(DbDataReader, "sResult");
+            }
+            else
+            {
+                response.Success = false;
+                response.Message = "Ocurrió un error al obtener el resultado.";
             };
 
             return response;
@@ -81,5 +106,10 @@ namespace KS.CORE.DATAMANAGER
             return response;
         }
 
+
+        public static string MapperOutput(Database database)
+        {
+            return database.Command.Parameters["@Output"].Value.ToString();
+        }
     }
 }

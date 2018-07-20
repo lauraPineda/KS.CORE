@@ -49,6 +49,7 @@ namespace KS.CORE.DATAMANAGER
             ResponseDTO<List<CotizacionResponseDTO>> response = CotizacionMapper.MapperCotizacionResponseDTO(database.DataReader);
             database.Connection.Close();
 
+            response.Message= CommonMapper.MapperOutput(database);
             return response;
         }
         #endregion

@@ -48,10 +48,16 @@ namespace KS.CORE.DATA
                         sqlParameter.SqlDbType = SqlDbType.Structured;
 
                     }
-                    
-                    sqlParameter.SqlValue = arrobjParameters[intIndexParam]?? DBNull.Value;
+
+                    sqlParameter.SqlValue = arrobjParameters[intIndexParam] ?? DBNull.Value;
                     intIndexParam += 1;
                 }
+                else if (sqlParameter.Direction == ParameterDirection.InputOutput)
+                {
+                    sqlParameter.Direction = ParameterDirection.Output;
+                }
+
+
             }
         }
 

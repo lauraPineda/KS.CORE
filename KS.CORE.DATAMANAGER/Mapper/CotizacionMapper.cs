@@ -27,7 +27,7 @@ namespace KS.CORE.DATAMANAGER.Mapper
                         IdServicio = Helper.GetUInt16(DbDataReader, "IdServicio"),
                         sDescripcion = Helper.GetString(DbDataReader, "Descripcion"),
                         dPrecioServicio = Helper.GetDecimal(DbDataReader, "PrecioServicio"),
-                        dPorcentajeDescuento = Helper.GetDecimal(DbDataReader, "PorcentajeDescuento")
+                        dPorcentajeDescuento = Helper.GetDecimal(DbDataReader, "PrecioConDescuento")
                     });
                 }
 

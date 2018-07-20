@@ -16,6 +16,8 @@ namespace KS.CORE.WEBAPI
             //builder.RegisterType < EntityFrameworkProductRepository> ().AsImplementedInterfaces().InstancePerApiRequest().InstancePerHttpRequest();
 
             builder.RegisterType<CotizacionRequest>().AsImplementedInterfaces().InstancePerApiRequest();
+            builder.RegisterType<OrdenRequest>().AsImplementedInterfaces().InstancePerApiRequest();
+
 
 
             var container = builder.Build();
