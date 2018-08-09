@@ -2,12 +2,9 @@
 using KS.CORE.DATAMANAGER.Mapper;
 using KS.CORE.ENTITIES;
 using KS.CORE.SHARED;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KS.CORE.DATAMANAGER
 {
