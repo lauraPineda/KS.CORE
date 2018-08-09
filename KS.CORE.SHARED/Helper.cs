@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
-using System.Reflection;
 
 namespace KS.CORE.SHARED
 {
@@ -115,7 +113,7 @@ namespace KS.CORE.SHARED
             return reader.IsDBNull(reader.GetOrdinal(column)) ? char.MinValue : reader.GetString(reader.GetOrdinal(column)).First();
         }
 
-        public static DataTable ToDataTable(int[] items)
+        public static DataTable ToDataTable(uint[] items)
         {
             // New table.
             DataTable table = new DataTable();

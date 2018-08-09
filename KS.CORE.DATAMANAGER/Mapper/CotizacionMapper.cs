@@ -1,11 +1,7 @@
 ﻿using KS.CORE.ENTITIES;
 using KS.CORE.SHARED;
-using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KS.CORE.DATAMANAGER.Mapper
 {
@@ -27,7 +23,7 @@ namespace KS.CORE.DATAMANAGER.Mapper
                         IdServicio = Helper.GetUInt16(DbDataReader, "IdServicio"),
                         sDescripcion = Helper.GetString(DbDataReader, "Descripcion"),
                         dPrecioServicio = Helper.GetDecimal(DbDataReader, "PrecioServicio"),
-                        dPorcentajeDescuento = Helper.GetDecimal(DbDataReader, "PrecioConDescuento")
+                        dPrecioConDescuento = Helper.GetDecimal(DbDataReader, "PrecioConDescuento")
                     });
                 }
 

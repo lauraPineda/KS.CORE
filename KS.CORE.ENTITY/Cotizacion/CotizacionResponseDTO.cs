@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace KS.CORE.ENTITIES
 {
@@ -17,6 +12,6 @@ namespace KS.CORE.ENTITIES
         [DataMember]
         public decimal dPrecioServicio { get; set; }
         [DataMember]
-        public decimal dPorcentajeDescuento { get; set; }
+        public decimal dPrecioConDescuento { get; set; }
     }
 }

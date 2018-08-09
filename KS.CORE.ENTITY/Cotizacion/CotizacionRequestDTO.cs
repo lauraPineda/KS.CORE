@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace KS.CORE.ENTITIES
 {
@@ -8,7 +6,7 @@ namespace KS.CORE.ENTITIES
     public class CotizacionRequestDTO
     {
         [DataMember]
-        public int[] tServicios { get; set; }
+        public uint[] tServicios { get; set; }
         [DataMember]
         public string sCodigoDescuento { get; set; }
     }
