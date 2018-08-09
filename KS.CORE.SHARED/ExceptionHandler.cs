@@ -27,7 +27,7 @@ namespace KS.CORE.SHARED
 
         private ExceptionHandler()
         {
-            string exePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string exePath = AppDomain.CurrentDomain.BaseDirectory;
             _StreamWriter = new StreamWriter(Path.Combine(exePath, Helper.GetLogNameTxt()));
         }
 
@@ -37,6 +37,8 @@ namespace KS.CORE.SHARED
             sb.Append(DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss"));
             sb.Append(": ");
             sb.Append(ex.Message);
+            sb.Append(" || ");
+            sb.Append(ex.StackTrace);
             _StreamWriter.WriteLine(sb.ToString());
             _StreamWriter.Flush();
         }
