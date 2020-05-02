@@ -34,7 +34,9 @@ namespace KS.CORE.DATAMANAGER
                                                                                                 entity.sRazonSocial,
                                                                                                 entity.bIcluyeIVA,
                                                                                                 Helper.ToDataTable(entity.tServicios),
-                                                                                                entity.sCodigoDescuento);
+                                                                                                entity.sCodigoDescuento,
+                                                                                                entity.dPrecioDominio,
+                                                                                                entity.sDominio);
 
             response = CommonMapper.MapperIdString(database.DataReader);
 
